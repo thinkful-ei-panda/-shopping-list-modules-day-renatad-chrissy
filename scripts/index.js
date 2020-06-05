@@ -1,8 +1,7 @@
 import store from './store.js';
-console.log();
+console.log(store);
 
 import shoppingList from './shopping-list.js';
-
 
 const main = function () {
   shoppingList.bindEventListeners();
