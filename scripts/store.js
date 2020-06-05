@@ -1,4 +1,5 @@
 /* eslint-disable indent */
+import item from './item.js';
 
 const foo = 'bar';
 
@@ -9,3 +10,5 @@ const hideCheckedItems = false;
     items,
     hideCheckedItems
   };
+
+  console.log(item);
