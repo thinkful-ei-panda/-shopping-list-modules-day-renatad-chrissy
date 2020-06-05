@@ -144,4 +144,3 @@ export default {
 };
 
 console.log(store);
-console.log(foo);
