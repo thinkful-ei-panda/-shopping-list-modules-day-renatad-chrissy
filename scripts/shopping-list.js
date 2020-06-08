@@ -1,3 +1,4 @@
+/* eslint-disable no-useless-catch */
 import store from './store.js';
 import item from './item.js';
 
@@ -45,15 +46,15 @@ const render = function () {
 const addItemToShoppingList = function (itemName) {
   try {
     item.validateName(itemName);
-    item.create(itemName);
-      //items = items.push(item => store.items);
-      items = items.push(itemName);
-      render();
+    let newItem = item.create(itemName);
+    //items = items.push(item => store.items);
+    store.items.push(newItem);
+    render();
   } catch (error){
-    throw new Error('Cannot add item');
+    throw error;
   }
-  };
-;
+};
+
 
 const handleNewItemSubmit = function () {
   $('#js-shopping-list-form').submit(function (event) {
@@ -123,7 +124,7 @@ const handleDeleteItemClicked = function () {
  */
 const handleToggleFilterClick = function () {
   $('.js-filter-checked').click(() => {
-    toggleCheckedItemsFilter();
+    toggleCheckedFilter();
     render();
   });
 };

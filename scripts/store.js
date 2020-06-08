@@ -36,9 +36,15 @@ const hideCheckedItems = false;
     itemToCheck.checked = !itemToCheck.checked;
   }
 
-  const toggleCheckedFilter = function() {
-    this.hideCheckedItems = !this.hideCheckedItems;
+  // const toggleCheckedFilter = function() {
+  //   this.hideCheckedItems = !this.hideCheckedItems;
+  // };
+
+  const toggleCheckedFilter = function(id) {
+    const foundItem = this.items.find(item => item.id === id);
+    foundItem.checked = !foundItem.checked;
   };
+  
   
 
   export default {
