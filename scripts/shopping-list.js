@@ -45,11 +45,12 @@ const render = function () {
 const addItemToShoppingList = function (itemName) {
   try {
     item.validateName(itemName);
-    item.create(item);
-      items = items.push(item => store.items);
+    item.create(itemName);
+      //items = items.push(item => store.items);
+      items = items.push(itemName);
       render();
   } catch (error){
-    console.log(`Cannot add item: ${error.message}`);
+    throw new Error('Cannot add item');
   }
   };
 ;
@@ -58,7 +59,7 @@ const handleNewItemSubmit = function () {
   $('#js-shopping-list-form').submit(function (event) {
     event.preventDefault();
     const newItemName = $('.js-shopping-list-entry').val();
-    $('.js-shopping-list-entry').val('');
+    //$('.js-shopping-list-entry').val('');
     addItemToShoppingList(newItemName);
     render();
   });
