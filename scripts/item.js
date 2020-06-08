@@ -10,4 +10,7 @@ const create = function(name){
     };
 }
 
-export default {validateName, create};
+export default {
+    validateName, 
+    create
+};
