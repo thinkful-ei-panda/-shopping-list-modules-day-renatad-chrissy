@@ -13,7 +13,8 @@ const hideCheckedItems = false;
     addItem,
     findAndToggleChecked,
     findAndUpdateName,
-    findAndDelete
+    findAndDelete,
+    toggleCheckedFilter
   };
 
   console.log(item);
@@ -50,4 +51,8 @@ const hideCheckedItems = false;
   function findAndDelete(id) {
     const itemToDelete = this.items.findIndex(item => item.id === id);
     this.items.splice(itemToDelete, 1);
+  }
+
+  toggleCheckedFilter() {
+    this.hideCheckedItems = !this.hideCheckedItems;
   }
