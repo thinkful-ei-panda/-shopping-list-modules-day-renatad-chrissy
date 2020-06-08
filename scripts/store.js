@@ -13,7 +13,7 @@ const hideCheckedItems = false;
       item.validateName(name);
       const newItem = this.items.push(newItem);
     } catch(error) {
-      console.log(`Cannot add item: ${error.message}`);
+      throw new TypeError(`Cannot add item: ${error.message}`);
     }
   }
 
@@ -22,7 +22,7 @@ const hideCheckedItems = false;
       item.validateName(newName);
       const foundName = this.findById(id);
     } catch(error) {
-      console.log(`Cannot update name: ${error.message}.`);
+      throw new TypeError(`Cannot update name: ${error.message}.`);
     }
   }
 
@@ -36,15 +36,9 @@ const hideCheckedItems = false;
     itemToCheck.checked = !itemToCheck.checked;
   }
 
-  // const toggleCheckedFilter = function() {
-  //   this.hideCheckedItems = !this.hideCheckedItems;
-  // };
-
-  const toggleCheckedFilter = function(id) {
-    const foundItem = this.items.find(item => item.id === id);
-    foundItem.checked = !foundItem.checked;
+  function toggleCheckedFilter() {
+    this.hideCheckedItems = !this.hideCheckedItems;
   };
-  
   
 
   export default {

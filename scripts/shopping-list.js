@@ -122,12 +122,12 @@ const handleDeleteItemClicked = function () {
  * Places an event listener on the checkbox
  * for hiding completed items.
  */
-const handleToggleFilterClick = function () {
-  $('.js-filter-checked').click(() => {
-    toggleCheckedFilter();
-    render();
+const handleToggleFilterClick = function () {  
+  $('.js-filter-checked').click(() => {    
+    store.toggleCheckedFilter();    
+    render();  
   });
-};
+  };
 
 const handleEditShoppingItemSubmit = function () {
   $('.js-shopping-list').on('submit', '.js-edit-item', event => {
@@ -152,5 +152,3 @@ export default {
   render,
   bindEventListeners
 };
-
-console.log(store);
