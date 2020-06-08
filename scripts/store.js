@@ -53,6 +53,6 @@ const hideCheckedItems = false;
     this.items.splice(itemToDelete, 1);
   }
 
-  toggleCheckedFilter() {
+  function toggleCheckedFilter() {
     this.hideCheckedItems = !this.hideCheckedItems;
   }

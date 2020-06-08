@@ -48,8 +48,8 @@ const addItemToShoppingList = function (itemName) {
     item.create(item);
       items = items.push(item => store.items)
       render()
-  } catch {
-    `Cannot add item: ${error.message}.`
+  } catch (error) {
+    `Cannot add item: ${error.message}`;
   }
   };
 ;
